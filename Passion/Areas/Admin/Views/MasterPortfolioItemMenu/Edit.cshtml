@@ -1,0 +1,202 @@
+﻿@model Passion.Areas.Admin.ViewModels.MasterPortfolioItemMenuViewmodel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="text-start">
+            <h1 class="fw-bolder">Edit PortfolioItemMenu</h1>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="MasterPortfolioItemMenuId" />
+    <input type="hidden" asp-for="CreateUser" />
+    <input type="hidden" asp-for="CreateDate" />
+    <div class="row m-0">
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioCategoryMenu.MasterPortfolioCategoryMenuName" class="form-label"></label>
+                <select asp-for="MasterPortfolioCategoryMenuId"
+                        asp-items="@(new SelectList(ViewBag.category, "MasterPortfolioCategoryMenuId", "MasterPortfolioCategoryMenuName"))" class="form-control form-select">
+                </select>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuTitle" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuTitle" class="form-control" />
+                <span asp-validation-for="MasterPortfolioItemMenuTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuBreef" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuBreef" class="form-control" />
+                <span asp-validation-for="MasterPortfolioItemMenuBreef" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuFile" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuFile" class="form-control" onchange="previewImage(this)" />
+                <span asp-validation-for="MasterPortfolioItemMenuFile" class="text-danger"></span>
+                <input asp-for="MasterPortfolioItemMenuImageUrl" class="form-control" hidden />
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <div class="mt-3">
+                    <img id="Image" src="@(string.IsNullOrEmpty(Model.MasterPortfolioItemMenuImageUrl) ? "" : Url.Content("~/Pictures/MasterPortfolioItemMenu/" + Model.MasterPortfolioItemMenuImageUrl))"
+                         class="img-thumbnail" style="max-height: 100px; max-width:100px;" alt="Image" />
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsTitle" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuDetailsTitle" class="form-control" />
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsDate" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuDetailsDate" class="form-control" />
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsDate" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsCompany" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuDetailsCompany" class="form-control" />
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsCompany" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsUrlCompany" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuDetailsUrlCompany" class="form-control" />
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsUrlCompany" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsProjectFeatures" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuDetailsProjectFeatures" class="form-control" />
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsProjectFeatures" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsTechnologiesUsed" class="form-label"></label>
+                <textarea asp-for="MasterPortfolioItemMenuDetailsTechnologiesUsed" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsTechnologiesUsed" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsDescription1" class="form-label"></label>
+                <textarea asp-for="MasterPortfolioItemMenuDetailsDescription1" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsDescription1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsDescription2" class="form-label"></label>
+                <textarea asp-for="MasterPortfolioItemMenuDetailsDescription2" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsDescription2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsActiveUsers" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuDetailsActiveUsers" class="form-control" />
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsActiveUsers" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsClientSatisfaction" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuDetailsClientSatisfaction" class="form-control" />
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsClientSatisfaction" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsMonthsDevelopment" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuDetailsMonthsDevelopment" class="form-control" />
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsMonthsDevelopment" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsAppStoreRating" class="form-label"></label>
+                <input asp-for="MasterPortfolioItemMenuDetailsAppStoreRating" class="form-control" />
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsAppStoreRating" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-8 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsTheChallenge" class="form-label"></label>
+                <textarea asp-for="MasterPortfolioItemMenuDetailsTheChallenge" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsTheChallenge" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsTheSolution" class="form-label"></label>
+                <textarea asp-for="MasterPortfolioItemMenuDetailsTheSolution" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsTheSolution" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsFeatures1" class="form-label"></label>
+                <textarea asp-for="MasterPortfolioItemMenuDetailsFeatures1" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsFeatures1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsFeatures2" class="form-label"></label>
+                <textarea asp-for="MasterPortfolioItemMenuDetailsFeatures2" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsFeatures2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterPortfolioItemMenuDetailsFeatures3" class="form-label"></label>
+                <textarea asp-for="MasterPortfolioItemMenuDetailsFeatures3" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="MasterPortfolioItemMenuDetailsFeatures3" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="text-end m-3">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
+</form>
+
+<script>
+    function previewImage(input) {
+        const Image = document.getElementById('Image');
+        const file = input.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                Image.src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+</script>

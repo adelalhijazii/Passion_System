@@ -1,0 +1,68 @@
+﻿@model Passion.Areas.Admin.ViewModels.MasterChooseItemMenuViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="text-start">
+            <h1 class="fw-bolder">New ChooseItemMenu</h1>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="MasterChooseItemMenuId" class="form-control" type="hidden" value="0" />
+    <div class="row m-0">
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseCategory.MasterChooseCategoryTitle" class="form-label"></label>
+                <select asp-for="MasterChooseCategoryId"
+                        asp-items="@(new SelectList(ViewBag.category, "MasterChooseCategoryId", "MasterChooseCategoryTitle"))" class="form-control form-select">
+                </select>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseItemMenuTitle" class="form-label"></label>
+                <input asp-for="MasterChooseItemMenuTitle" class="form-control" placeholder="Enter Title" />
+                <span asp-validation-for="MasterChooseItemMenuTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseItemMenuBreef" class="form-label"></label>
+                <input asp-for="MasterChooseItemMenuBreef" class="form-control" placeholder="Enter Breef" />
+                <span asp-validation-for="MasterChooseItemMenuBreef" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseItemMenuFile" class="form-label"></label>
+                <input asp-for="MasterChooseItemMenuFile" type="file" class="form-control" />
+                <span asp-validation-for="MasterChooseItemMenuFile" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-8 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseItemMenuDescription" class="form-label"></label>
+                <textarea asp-for="MasterChooseItemMenuDescription" class="form-control" rows="4" placeholder="Enter Description"></textarea>
+                <span asp-validation-for="MasterChooseItemMenuDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseItemMenuList" class="form-label"></label>
+                <textarea asp-for="MasterChooseItemMenuList" class="form-control" rows="4" placeholder="Enter List"></textarea>
+                <span asp-validation-for="MasterChooseItemMenuList" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="text-end m-3">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
+</form>

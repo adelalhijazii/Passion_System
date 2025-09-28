@@ -1,0 +1,76 @@
+﻿@model Passion.ViewModels.HomeViewModel
+
+@{
+    ViewData["Title"] = "ServiceDetails";
+}
+
+<div class="page-title dark-background" style="background-image: url(assets/img/bg/bg-14.webp);">
+    <div class="container position-relative">
+        <h1>Service Details</h1>
+        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+        <nav class="breadcrumbs">
+            <ol>
+                <li><a asp-action="Index" asp-controller="Home">Home</a></li>
+                <li class="current">Service Details</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<section id="service-details" class="service-details section">
+    <div class="container">
+        <div class="row gy-5">
+            <div class="col-lg-8">
+                <div class="service-hero">
+                    <img src="~/Pictures/MasterServices/@Model.Services.MasterServicesDetailsImageUrl" alt="" class="img-fluid">
+                    <div class="service-badge">
+                        <span>@Model.Services.MasterServicesDetailsTitleImageUrl</span>
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-header">
+                        <h2>@Model.Services.MasterServicesDetailsTitle</h2>
+                        <p class="service-intro">@Model.Services.MasterServicesDetailsBreef</p>
+                    </div>
+                    <div class="service-features">
+                        <h4>What You'll Get</h4>
+                        @Html.Raw(Model.Services.MasterServicesDetailsDescriptionWhatYouWillGet)
+                    </div>
+                    <div class="service-process">
+                        <h4>Our Process</h4>
+                        @Html.Raw(Model.Services.MasterServicesDetailsDescriptionOurProcess)
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="service-sidebar">
+                    <div class="service-menu">
+                        <h4>Our Services</h4>
+                        @Html.Raw(Model.Services.MasterServicesDetailsList1)
+                    </div>
+                    <div class="service-info">
+                        <h4>Service Details</h4>
+                        @Html.Raw(Model.Services.MasterServicesDetailsList2)
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-content">
+                            <h4>Need Help?</h4>
+                            @Html.Raw(Model.Services.MasterServicesDetailsNeedHelpDescription)
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    @Html.Raw(Model.Services.MasterServicesDetailsNeedHelpIconPhone)
+                                    <span>@Model.Services.MasterServicesDetailsNeedHelpPhone</span>
+                                </div>
+                                <div class="contact-item">
+                                    @Html.Raw(Model.Services.MasterServicesDetailsNeedHelpIconEmail)
+                                    <span>@Model.Services.MasterServicesDetailsNeedHelpEmail</span>
+                                </div>
+                            </div>
+                            @Html.Raw(Model.Services.MasterServicesDetailsNeedHelpUrl)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

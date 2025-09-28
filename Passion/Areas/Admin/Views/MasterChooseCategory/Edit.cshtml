@@ -1,0 +1,47 @@
+﻿@model Passion.Areas.Admin.ViewModels.MasterChooseCategoryViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="text-start">
+            <h1 class="fw-bolder">Edit ChooseCategory</h1>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="MasterChooseCategoryId" />
+    <input type="hidden" asp-for="CreateUser" />
+    <input type="hidden" asp-for="CreateDate" />
+    <div class="row m-0">
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseCategoryIcon" class="form-label"></label>
+                <input asp-for="MasterChooseCategoryIcon" class="form-control" />
+                <span asp-validation-for="MasterChooseCategoryIcon" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseCategoryTitle" class="form-label"></label>
+                <input asp-for="MasterChooseCategoryTitle" class="form-control" />
+                <span asp-validation-for="MasterChooseCategoryTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseCategoryBreef" class="form-label"></label>
+                <input asp-for="MasterChooseCategoryBreef" class="form-control" />
+                <span asp-validation-for="MasterChooseCategoryBreef" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="text-end m-3">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
+</form>

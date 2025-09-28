@@ -1,0 +1,153 @@
+﻿@model Passion.Areas.Admin.ViewModels.MasterServicesViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="text-start">
+            <h1 class="fw-bolder">New Services</h1>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="MasterServicesId" class="form-control" type="hidden" value="0" />
+    <div class="row m-0">
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesIcon" class="form-label"></label>
+                <input asp-for="MasterServicesIcon" class="form-control" placeholder="Enter Icon" />
+                <span asp-validation-for="MasterServicesIcon" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesTitle" class="form-label"></label>
+                <input asp-for="MasterServicesTitle" class="form-control" placeholder="Enter Title" />
+                <span asp-validation-for="MasterServicesTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDescription" class="form-label"></label>
+                <textarea asp-for="MasterServicesDescription" class="form-control" rows="4" placeholder="Enter Description"></textarea>
+                <span asp-validation-for="MasterServicesDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesUrl" class="form-label"></label>
+                <input asp-for="MasterServicesUrl" class="form-control" placeholder="Enter Url" />
+                <span asp-validation-for="MasterServicesUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-8 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsList1" class="form-label"></label>
+                <textarea asp-for="MasterServicesDetailsList1" class="form-control" rows="4" placeholder="Enter DetailsList"></textarea>
+                <span asp-validation-for="MasterServicesDetailsList1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsList2" class="form-label"></label>
+                <textarea asp-for="MasterServicesDetailsList2" class="form-control" rows="4" placeholder="Enter DetailsList"></textarea>
+                <span asp-validation-for="MasterServicesDetailsList2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsNeedHelpDescription" class="form-label"></label>
+                <textarea asp-for="MasterServicesDetailsNeedHelpDescription" class="form-control" rows="4" placeholder="Enter Description"></textarea>
+                <span asp-validation-for="MasterServicesDetailsNeedHelpDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsNeedHelpIconPhone" class="form-label"></label>
+                <input asp-for="MasterServicesDetailsNeedHelpIconPhone" class="form-control" placeholder="Enter IconPhone" />
+                <span asp-validation-for="MasterServicesDetailsNeedHelpIconPhone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsNeedHelpPhone" class="form-label"></label>
+                <input asp-for="MasterServicesDetailsNeedHelpPhone" class="form-control" placeholder="Enter Details Phone" />
+                <span asp-validation-for="MasterServicesDetailsNeedHelpPhone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsNeedHelpIconEmail" class="form-label"></label>
+                <input asp-for="MasterServicesDetailsNeedHelpIconEmail" class="form-control" placeholder="Enter IconEmail" />
+                <span asp-validation-for="MasterServicesDetailsNeedHelpIconEmail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsNeedHelpEmail" class="form-label"></label>
+                <input asp-for="MasterServicesDetailsNeedHelpEmail" class="form-control" placeholder="Enter Email" />
+                <span asp-validation-for="MasterServicesDetailsNeedHelpEmail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsNeedHelpUrl" class="form-label"></label>
+                <input asp-for="MasterServicesDetailsNeedHelpUrl" class="form-control" placeholder="Enter Url" />
+                <span asp-validation-for="MasterServicesDetailsNeedHelpUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsTitleImageUrl" class="form-label"></label>
+                <input asp-for="MasterServicesDetailsTitleImageUrl" class="form-control" placeholder="Enter DetailsTitleImageUrl" />
+                <span asp-validation-for="MasterServicesDetailsTitleImageUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsTitle" class="form-label"></label>
+                <input asp-for="MasterServicesDetailsTitle" class="form-control" placeholder="Enter DetailsTitle" />
+                <span asp-validation-for="MasterServicesDetailsTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsBreef" class="form-label"></label>
+                <input asp-for="MasterServicesDetailsBreef" class="form-control" placeholder="Enter DetailsBreef" />
+                <span asp-validation-for="MasterServicesDetailsBreef" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsDescriptionWhatYouWillGet" class="form-label"></label>
+                <textarea asp-for="MasterServicesDetailsDescriptionWhatYouWillGet" class="form-control" rows="4" placeholder="Enter WhatYouWillGet"></textarea>
+                <span asp-validation-for="MasterServicesDetailsDescriptionWhatYouWillGet" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsDescriptionOurProcess" class="form-label"></label>
+                <textarea asp-for="MasterServicesDetailsDescriptionOurProcess" class="form-control" rows="4" placeholder="Enter OurProcess"></textarea>
+                <span asp-validation-for="MasterServicesDetailsDescriptionOurProcess" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServicesDetailsFile" class="form-label"></label>
+                <input asp-for="MasterServicesDetailsFile" type="file" class="form-control" />
+                <span asp-validation-for="MasterServicesDetailsFile" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="text-end m-3">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
+</form>

@@ -1,0 +1,78 @@
+﻿@model Passion.Areas.Admin.ViewModels.MasterWhatPeopleSayViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="text-start">
+            <h1 class="fw-bolder">Edit WhatPeopleSay</h1>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="MasterWhatPeopleSayId" />
+    <input type="hidden" asp-for="CreateUser" />
+    <input type="hidden" asp-for="CreateDate" />
+    <div class="row m-0">
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterWhatPeopleSayTitle" class="form-label"></label>
+                <input asp-for="MasterWhatPeopleSayTitle" class="form-control" />
+                <span asp-validation-for="MasterWhatPeopleSayTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterWhatPeopleSayBreef" class="form-label"></label>
+                <input asp-for="MasterWhatPeopleSayBreef" class="form-control" />
+                <span asp-validation-for="MasterWhatPeopleSayBreef" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterWhatPeopleSayDescription" class="form-label"></label>
+                <textarea asp-for="MasterWhatPeopleSayDescription" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="MasterWhatPeopleSayDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterWhatPeopleSayFile" class="form-label"></label>
+                <input asp-for="MasterWhatPeopleSayFile" class="form-control" onchange="previewImage(this)" />
+                <span asp-validation-for="MasterWhatPeopleSayFile" class="text-danger"></span>
+                <input type="hidden" asp-for="MasterWhatPeopleSayImageUrl" />
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <div class="mt-3">
+                    <img id="preview" src="@(string.IsNullOrEmpty(Model.MasterWhatPeopleSayImageUrl) ? "" : Url.Content("~/Pictures/MasterWhatPeopleSay/" + Model.MasterWhatPeopleSayImageUrl))"
+                         class="img-thumbnail rounded-circle" style="max-height: 70px; max-width:70px;" alt="Team Image" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-end m-3">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
+</form>
+
+<script>
+    function previewImage(input) {
+        const preview = document.getElementById('preview');
+        const file = input.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+</script>

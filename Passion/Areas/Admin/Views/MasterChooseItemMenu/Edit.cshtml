@@ -1,0 +1,94 @@
+﻿@model Passion.Areas.Admin.ViewModels.MasterChooseItemMenuViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="text-start">
+            <h1 class="fw-bolder">Edit ChooseItemMenu</h1>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="MasterChooseItemMenuId" />
+    <input type="hidden" asp-for="CreateUser" />
+    <input type="hidden" asp-for="CreateDate" />
+    <div class="row m-0">
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseCategory.MasterChooseCategoryTitle" class="form-label"></label>
+                <select asp-for="MasterChooseCategoryId"
+                        asp-items="@(new SelectList(ViewBag.category, "MasterChooseCategoryId", "MasterChooseCategoryTitle"))" class="form-control form-select">
+                </select>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseItemMenuTitle" class="form-label"></label>
+                <input asp-for="MasterChooseItemMenuTitle" class="form-control" />
+                <span asp-validation-for="MasterChooseItemMenuTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseItemMenuBreef" class="form-label"></label>
+                <input asp-for="MasterChooseItemMenuBreef" class="form-control" />
+                <span asp-validation-for="MasterChooseItemMenuBreef" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseItemMenuFile" class="form-label"></label>
+                <input asp-for="MasterChooseItemMenuFile" class="form-control" onchange="previewImage(this)" />
+                <span asp-validation-for="MasterChooseItemMenuFile" class="text-danger"></span>
+                <input asp-for="MasterChooseItemMenuImageUrl" class="form-control" hidden />
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <div class="mt-3">
+                    <img id="Image" src="@(string.IsNullOrEmpty(Model.MasterChooseItemMenuImageUrl) ? "" : Url.Content("~/Pictures/MasterChooseItemMenu/" + Model.MasterChooseItemMenuImageUrl))"
+                         class="img-thumbnail" style="max-height: 100px; max-width:100px;" alt="Image" />
+                </div>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseItemMenuDescription" class="form-label"></label>
+                <textarea asp-for="MasterChooseItemMenuDescription" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="MasterChooseItemMenuDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterChooseItemMenuList" class="form-label"></label>
+                <textarea asp-for="MasterChooseItemMenuList" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="MasterChooseItemMenuList" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="text-end m-3">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
+</form>
+
+<script>
+    function previewImage(input) {
+        const Image = document.getElementById('Image');
+        const file = input.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                Image.src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    }
+</script>

@@ -1,0 +1,54 @@
+﻿@model Passion.Areas.Admin.ViewModels.MasterServiceViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="text-start">
+            <h1 class="fw-bolder">Edit AboutUs</h1>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="MasterServiceId" />
+    <input type="hidden" asp-for="CreateUser" />
+    <input type="hidden" asp-for="CreateDate" />
+    <div class="row m-0">
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServiceProjectsCompleted" class="form-label"></label>
+                <textarea asp-for="MasterServiceProjectsCompleted" class="form-control"></textarea>
+                <span asp-validation-for="MasterServiceProjectsCompleted" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServiceClientSatisfaction" class="form-label"></label>
+                <textarea asp-for="MasterServiceClientSatisfaction" class="form-control"></textarea>
+                <span asp-validation-for="MasterServiceClientSatisfaction" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServiceSupportAvailable" class="form-label"></label>
+                <textarea asp-for="MasterServiceSupportAvailable" class="form-control"></textarea>
+                <span asp-validation-for="MasterServiceSupportAvailable" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterServiceYearsExperience" class="form-label"></label>
+                <textarea asp-for="MasterServiceYearsExperience" class="form-control"></textarea>
+                <span asp-validation-for="MasterServiceYearsExperience" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="text-end m-3">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
+</form>

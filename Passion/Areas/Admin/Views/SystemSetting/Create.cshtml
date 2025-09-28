@@ -1,0 +1,227 @@
+﻿@model Passion.Areas.Admin.ViewModels.SystemSettingViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="text-start">
+            <h1 class="fw-bolder">New SystemSetting</h1>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="SystemSettingId" class="form-control" type="hidden" value="0" />
+    <div class="row m-0">
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingEmail" class="form-label"></label>
+                <input asp-for="SystemSettingEmail" class="form-control" placeholder="Enter Email" />
+                <span asp-validation-for="SystemSettingEmail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingPhoneNumber" class="form-label"></label>
+                <input asp-for="SystemSettingPhoneNumber" class="form-control" placeholder="Enter PhoneNumber" />
+                <span asp-validation-for="SystemSettingPhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingLogoImageUrl" class="form-label"></label>
+                <input asp-for="SystemSettingLogoImageUrl" class="form-control" placeholder="Enter Logo ImageUrl" />
+                <span asp-validation-for="SystemSettingLogoImageUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingWelcomeNoteTitle" class="form-label"></label>
+                <input asp-for="SystemSettingWelcomeNoteTitle" class="form-control" placeholder="Enter Title" />
+                <span asp-validation-for="SystemSettingWelcomeNoteTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingWelcomeNoteBreef" class="form-label"></label>
+                <input asp-for="SystemSettingWelcomeNoteBreef" class="form-control" placeholder="Enter Breef" />
+                <span asp-validation-for="SystemSettingWelcomeNoteBreef" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingWelcomeNoteDescription" class="form-label"></label>
+                <textarea asp-for="SystemSettingWelcomeNoteDescription" class="form-control" placeholder="Enter Description" rows="4"></textarea>
+                <span asp-validation-for="SystemSettingWelcomeNoteDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingServicesUrl" class="form-label"></label>
+                <input asp-for="SystemSettingServicesUrl" class="form-control" placeholder="Enter ServicesUrl" />
+                <span asp-validation-for="SystemSettingServicesUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-8 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingProjectsCompleted" class="form-label"></label>
+                <input asp-for="SystemSettingProjectsCompleted" class="form-control" placeholder="Enter ProjectsCompleted" />
+                <span asp-validation-for="SystemSettingProjectsCompleted" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingClientSatisfaction" class="form-label"></label>
+                <input asp-for="SystemSettingClientSatisfaction" class="form-control" placeholder="Enter ClientSatisfaction" />
+                <span asp-validation-for="SystemSettingClientSatisfaction" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingSupportAvailable" class="form-label"></label>
+                <input asp-for="SystemSettingSupportAvailable" class="form-control" placeholder="Enter SupportAvailable" />
+                <span asp-validation-for="SystemSettingSupportAvailable" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingSecureAndReliable" class="form-label"></label>
+                <input asp-for="SystemSettingSecureAndReliable" class="form-control" placeholder="Enter SecureAndReliable" />
+                <span asp-validation-for="SystemSettingSecureAndReliable" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingHighPerformance" class="form-label"></label>
+                <input asp-for="SystemSettingHighPerformance" class="form-control" placeholder="Enter HighPerformance" />
+                <span asp-validation-for="SystemSettingHighPerformance" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingExpertTeam" class="form-label"></label>
+                <input asp-for="SystemSettingExpertTeam" class="form-control" placeholder="Enter ExpertTeam" />
+                <span asp-validation-for="SystemSettingExpertTeam" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAwardWinning" class="form-label"></label>
+                <input asp-for="SystemSettingAwardWinning" class="form-control" placeholder="Enter AwardWinning" />
+                <span asp-validation-for="SystemSettingAwardWinning" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingCopyright" class="form-label"></label>
+                <input asp-for="SystemSettingCopyright" class="form-control" placeholder="Enter Copyright" />
+                <span asp-validation-for="SystemSettingCopyright" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingWelcomeNoteImageUrlFile" class="form-label"></label>
+                <input asp-for="SystemSettingWelcomeNoteImageUrlFile" type="file" class="form-control" />
+                <span asp-validation-for="SystemSettingWelcomeNoteImageUrlFile" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-8 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutTitle" class="form-label"></label>
+                <input asp-for="SystemSettingAboutTitle" class="form-control" placeholder="Enter AboutTitle" />
+                <span asp-validation-for="SystemSettingAboutTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutBreef" class="form-label"></label>
+                <input asp-for="SystemSettingAboutBreef" class="form-control" placeholder="Enter AboutBreef" />
+                <span asp-validation-for="SystemSettingAboutBreef" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutDescription1" class="form-label"></label>
+                <textarea asp-for="SystemSettingAboutDescription1" class="form-control" placeholder="Enter AboutDescription" rows="4"></textarea>
+                <span asp-validation-for="SystemSettingAboutDescription1" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutDescription2" class="form-label"></label>
+                <textarea asp-for="SystemSettingAboutDescription2" class="form-control" placeholder="Enter AboutDescription" rows="4"></textarea>
+                <span asp-validation-for="SystemSettingAboutDescription2" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutYearsExperience" class="form-label"></label>
+                <input asp-for="SystemSettingAboutYearsExperience" class="form-control" placeholder="Enter AboutYearsExperience" />
+                <span asp-validation-for="SystemSettingAboutYearsExperience" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutProjectsCompleted" class="form-label"></label>
+                <input asp-for="SystemSettingAboutProjectsCompleted" class="form-control" placeholder="Enter AboutProjectsCompleted" />
+                <span asp-validation-for="SystemSettingAboutProjectsCompleted" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutTeamMembers" class="form-label"></label>
+                <input asp-for="SystemSettingAboutTeamMembers" class="form-control" placeholder="Enter AboutTeamMembers" />
+                <span asp-validation-for="SystemSettingAboutTeamMembers" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutPortfolioUrl" class="form-label"></label>
+                <input asp-for="SystemSettingAboutPortfolioUrl" class="form-control" placeholder="Enter AboutPortfolioUrl" />
+                <span asp-validation-for="SystemSettingAboutPortfolioUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutTeamUrl" class="form-label"></label>
+                <input asp-for="SystemSettingAboutTeamUrl" class="form-control" placeholder="Enter AboutTeamUrl" />
+                <span asp-validation-for="SystemSettingAboutTeamUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutAwardIcon" class="form-label"></label>
+                <input asp-for="SystemSettingAboutAwardIcon" class="form-control" placeholder="Enter AboutAwardIcon" />
+                <span asp-validation-for="SystemSettingAboutAwardIcon" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutAwardTitle" class="form-label"></label>
+                <input asp-for="SystemSettingAboutAwardTitle" class="form-control" placeholder="Enter AboutAwardTitle" />
+                <span asp-validation-for="SystemSettingAboutAwardTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="SystemSettingAboutImageUrlFile" class="form-label"></label>
+                <input asp-for="SystemSettingAboutImageUrlFile" type="file" class="form-control" />
+                <span asp-validation-for="SystemSettingAboutImageUrlFile" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="text-end m-3">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
+</form>

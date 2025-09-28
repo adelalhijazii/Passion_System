@@ -1,0 +1,127 @@
+﻿@model Passion.Areas.Admin.ViewModels.MasterFocusViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="text-start">
+            <h1 class="fw-bolder">New Focus</h1>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="MasterFocusId" class="form-control" type="hidden" value="0" />
+    <div class="row m-0">
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusTitle" class="form-label"></label>
+                <input asp-for="MasterFocusTitle" class="form-control" placeholder="Enter Title" />
+                <span asp-validation-for="MasterFocusTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusBreef" class="form-label"></label>
+                <input asp-for="MasterFocusBreef" class="form-control" placeholder="Enter Breef" />
+                <span asp-validation-for="MasterFocusBreef" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusDescription" class="form-label"></label>
+                <textarea asp-for="MasterFocusDescription" class="form-control" placeholder="Enter Description" rows="3"></textarea>
+                <span asp-validation-for="MasterFocusDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusQuickSetupIcon" class="form-label"></label>
+                <input asp-for="MasterFocusQuickSetupIcon" class="form-control" placeholder="Enter Icon" />
+                <span asp-validation-for="MasterFocusQuickSetupIcon" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusQuickSetupDescription" class="form-label"></label>
+                <textarea asp-for="MasterFocusQuickSetupDescription" class="form-control" placeholder="Enter Description" rows="3"></textarea>
+                <span asp-validation-for="MasterFocusQuickSetupDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusFullSecurityIcon" class="form-label"></label>
+                <input asp-for="MasterFocusFullSecurityIcon" class="form-control" placeholder="Enter Icon" />
+                <span asp-validation-for="MasterFocusFullSecurityIcon" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusFullSecurityDescription" class="form-label"></label>
+                <textarea asp-for="MasterFocusFullSecurityDescription" class="form-control" placeholder="Enter Description" rows="3"></textarea>
+                <span asp-validation-for="MasterFocusFullSecurityDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusUrl" class="form-label"></label>
+                <input asp-for="MasterFocusUrl" class="form-control" placeholder="Enter Url" />
+                <span asp-validation-for="MasterFocusUrl" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusMoneyBack" class="form-label"></label>
+                <input asp-for="MasterFocusMoneyBack" class="form-control" placeholder="Enter MoneyBack" />
+                <span asp-validation-for="MasterFocusMoneyBack" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusRatingIcon" class="form-label"></label>
+                <input asp-for="MasterFocusRatingIcon" class="form-control" placeholder="Enter RatingIcon" />
+                <span asp-validation-for="MasterFocusRatingIcon" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusRating" class="form-label"></label>
+                <input asp-for="MasterFocusRating" class="form-control" placeholder="Enter NumberofRating" />
+                <span asp-validation-for="MasterFocusRating" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusUsersIcon" class="form-label"></label>
+                <input asp-for="MasterFocusUsersIcon" class="form-control" placeholder="Enter UsersIcon" />
+                <span asp-validation-for="MasterFocusUsersIcon" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusUsers" class="form-label"></label>
+                <input asp-for="MasterFocusUsers" class="form-control" placeholder="Enter NumberofUsers" />
+                <span asp-validation-for="MasterFocusUsers" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3"></div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterFocusFile" class="form-label"></label>
+                <input asp-for="MasterFocusFile" type="file" class="form-control" />
+                <span asp-validation-for="MasterFocusFile" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="text-end m-3">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
+</form>

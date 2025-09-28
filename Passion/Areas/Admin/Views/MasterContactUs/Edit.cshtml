@@ -1,0 +1,47 @@
+﻿@model Passion.Areas.Admin.ViewModels.MasterContactUsViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row mb-3">
+    <div class="col-12">
+        <div class="text-start">
+            <h1 class="fw-bolder">Edit AboutUs</h1>
+        </div>
+    </div>
+</div>
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="MasterContactUsId" />
+    <input type="hidden" asp-for="CreateUser" />
+    <input type="hidden" asp-for="CreateDate" />
+    <div class="row m-0">
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterContactUsPhone" class="form-label"></label>
+                <input asp-for="MasterContactUsPhone" class="form-control" />
+                <span asp-validation-for="MasterContactUsPhone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterContactUsEmail" class="form-label"></label>
+                <input asp-for="MasterContactUsEmail" class="form-control" />
+                <span asp-validation-for="MasterContactUsEmail" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-4 mb-3">
+            <div class="form-group">
+                <label asp-for="MasterContactUsDescription" class="form-label"></label>
+                <textarea asp-for="MasterContactUsDescription" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="MasterContactUsDescription" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="text-end m-3">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-success">Back to List</a>
+    </div>
+</form>
